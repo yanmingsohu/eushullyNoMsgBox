@@ -1,5 +1,6 @@
 ﻿#include <windows.h>
 #include <stdio.h>
+#include <io.h>
 #include "detours.h"
 
 #pragma comment(lib, "../bin/detours.lib")
@@ -34,6 +35,10 @@ BOOL WINAPI DllMain(HINSTANCE hinst, DWORD dwReason, LPVOID reserved) {
 
       DetourAttach(&(PVOID&)RealMessageBox, MyMessageBoxA);
       error = DetourTransactionCommit();
+
+      if (0 == _access("mai.dll", _A_NORMAL)) {
+        LoadLibrary("mai.dll");
+      }
       break;
 
     case DLL_PROCESS_DETACH:
