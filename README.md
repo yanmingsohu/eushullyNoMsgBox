@@ -1,9 +1,12 @@
-e社防弹窗
-======
-工作原理
-------
+# Eushully engine game, anti message box
 
-用detours库hook掉MessageBoxA这个API来实现防弹窗。
-用法
-------
-把exe和dll拷到age.exe目录。用Locale Emulator之类的转码程序运行exe就可以了。
+## How work
+
+Hook `MessageBoxA` using [detours](https://github.com/microsoft/Detours)
+
+
+## Usage
+
+Download release files, Unzip to the game directory, Run 'AGE-NoMsg-Loader.exe'
+
+It will start 'age_cn.exe' if file exists, Then 'age.exe'.
