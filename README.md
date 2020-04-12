@@ -10,3 +10,5 @@ Hook `MessageBoxA` using [detours](https://github.com/microsoft/Detours)
 Download release files, Unzip to the game directory, Run 'AGE-NoMsg-Loader.exe'
 
 It will start 'age_cn.exe' if file exists, Then 'age.exe'.
+
+If 'mai.dll' exists, Then start 'age.exe' and inject 'mai.dll'.
